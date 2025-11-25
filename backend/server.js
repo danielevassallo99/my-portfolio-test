@@ -24,6 +24,18 @@ async function bootstrap() {
     app.use(cors({ origin: API_URL === '*' ? '*' : API_URL }));
     app.use(express.json());
 
+    // Importa le rotte
+    const projectRoutes = require('./routes/projects');
+
+    // Collega le rotte al server
+    app.use('/api/projects', projectRoutes);
+
+    const messageRoutes = require('./routes/messages');
+    app.use('/api/messages', messageRoutes);
+
+    const newsletterRoutes = require('./routes/newsletter');
+    app.use('/api/newsletter', newsletterRoutes);
+
     app.get('/api/health', (_req, res) => {
       res.json({ status: 'ok' });
     });

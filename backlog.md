@@ -16,8 +16,6 @@ Descrizione: Definire i modelli Mongoose per Progetto, Messaggio e IscrittoNewsl
 Cosa fare: File backend/models/Project.js, backend/models/Message.js, backend/models/Newsletter.js con schema completi
 Criterio: Modelli importabili senza errori, validazioni funzionanti
 Dipendenze: Task 2
-
-## 📝 DA FARE
 Task 4: API Endpoints Progetti (GET)
 Descrizione: Implementare GET /api/projects (lista completa) e GET /api/projects/:id (singolo progetto). Gestire errori 404 e validazione ID.
 Cosa fare: File backend/routes/projects.js, controller backend/controllers/projectController.js con logica GET
@@ -38,6 +36,8 @@ Descrizione: Implementare POST /api/projects per inserire nuovi progetti. Valida
 Cosa fare: Aggiungere route POST in backend/routes/projects.js, controller con validazione e creazione progetto
 Criterio: POST crea progetto nel DB, restituisce oggetto creato con _id
 Dipendenze: Task 4
+
+## 📝 DA FARE
 Task 8: Setup Frontend Next.js e Tailwind CSS
 Descrizione: Inizializzare app Next.js con routing pages, configurare Tailwind CSS, creare layout base e file di configurazione globali (fonts, colors).
 Cosa fare: Setup Next.js in /frontend, tailwind.config.js, globals.css, /pages/_app.js e /pages/_document.js
