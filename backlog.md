@@ -1,9 +1,6 @@
 # Backlog Portfolio
 
 ## ✅ COMPLETATO
-(nessuno per ora)
-
-## 📝 DA FARE
 Task 1: Setup Repository e Struttura Base
 Descrizione: Inizializzare il progetto monorepo con frontend (Next.js) e backend (Express). Creare struttura cartelle, configurare package.json, .gitignore, README.md e variabili d'ambiente.
 Cosa fare: Creare /frontend (Next.js), /backend (Node.js/Express), file .gitignore, README.md, .env.example con variabili (DB_URI, PORT, API_URL)
@@ -14,6 +11,8 @@ Descrizione: Configurare server Express base con middleware (cors, express.json)
 Cosa fare: File backend/server.js, backend/config/db.js (connessione MongoDB), middleware, endpoint GET /api/health
 Criterio: Server parte su porta configurata e connessione MongoDB riesce
 Dipendenze: Task 1
+
+## 📝 DA FARE
 Task 3: Schema Database MongoDB (Models)
 Descrizione: Definire i modelli Mongoose per Progetto, Messaggio e IscrittoNewsletter secondo lo schema PRD. Includere validazioni base (required, unique per email).
 Cosa fare: File backend/models/Project.js, backend/models/Message.js, backend/models/Newsletter.js con schema completi

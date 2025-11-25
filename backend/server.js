@@ -1,41 +1,43 @@
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db');
 
-dotenv.config();
-
-const PORT = process.env.PORT || 4000;
-const DB_URI = process.env.DB_URI || '';
-const API_URL = process.env.API_URL || '*';
-
-const app = express();
-
-app.use(cors({ origin: API_URL === '*' ? '*' : API_URL }));
-app.use(express.json());
-
-app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
-});
-
-async function startServer() {
-  try {
-    if (DB_URI) {
-      await mongoose.connect(DB_URI);
-      console.log('Connected to MongoDB');
-    } else {
-      console.warn('DB_URI missing; skipping MongoDB connection');
-    }
-  } catch (error) {
-    console.error('MongoDB connection failed:', error);
-    process.exit(1);
+const localEnv = dotenv.config();
+if (localEnv.error) {
+  const rootEnvPath = path.resolve(__dirname, '../.env');
+  const rootEnv = dotenv.config({ path: rootEnvPath });
+  if (rootEnv.error) {
+    console.warn('⚠️  No .env file found; relying on existing process variables.');
   }
-
-  app.listen(PORT, () => {
-    console.log(`API listening on port ${PORT}`);
-  });
 }
 
-startServer();
+const PORT = process.env.PORT || 5000;
+const API_URL = process.env.API_URL || 'http://localhost:5000';
+
+async function bootstrap() {
+  try {
+    await connectDB();
+    const app = express();
+
+    app.use(cors({ origin: API_URL === '*' ? '*' : API_URL }));
+    app.use(express.json());
+
+    app.get('/api/health', (_req, res) => {
+      res.json({ status: 'ok' });
+    });
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Server listening on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error('Server initialization failed:', error.message);
+    process.exit(1);
+  }
+}
+
+bootstrap();
+
 
 
