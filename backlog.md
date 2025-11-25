@@ -36,8 +36,6 @@ Descrizione: Implementare POST /api/projects per inserire nuovi progetti. Valida
 Cosa fare: Aggiungere route POST in backend/routes/projects.js, controller con validazione e creazione progetto
 Criterio: POST crea progetto nel DB, restituisce oggetto creato con _id
 Dipendenze: Task 4
-
-## 📝 DA FARE
 Task 8: Setup Frontend Next.js e Tailwind CSS
 Descrizione: Inizializzare app Next.js con routing pages, configurare Tailwind CSS, creare layout base e file di configurazione globali (fonts, colors).
 Cosa fare: Setup Next.js in /frontend, tailwind.config.js, globals.css, /pages/_app.js e /pages/_document.js
@@ -53,6 +51,8 @@ Descrizione: Creare footer con link navigazione secondari, social icons (LinkedI
 Cosa fare: Componente frontend/components/Footer.jsx, icone social, link esterni, styling coerente
 Criterio: Footer appare su ogni pagina, link funzionanti, icone social cliccabili
 Dipendenze: Task 8
+
+## 📝 DA FARE
 Task 11: Pagina Home
 Descrizione: Creare homepage con hero section (titolo + slogan Daniele), griglia 3 progetti in evidenza (fetch da API), breve bio/intro e CTA contatto. Box newsletter opzionale.
 Cosa fare: File frontend/pages/index.jsx, fetch GET /api/projects (filtro featured), sezioni hero/progetti/bio/CTA, componenti riutilizzabili

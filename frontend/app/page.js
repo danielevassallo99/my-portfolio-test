@@ -1,17 +1,19 @@
 export default function Home() {
   return (
-    <main style={{ padding: '4rem 1.5rem', maxWidth: 960, margin: '0 auto' }}>
-      <p style={{ textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: 14 }}>
-        Monorepo Starter
-      </p>
-      <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', margin: '1rem 0' }}>
-        Portfolio Frontend
-      </h1>
-      <p style={{ fontSize: 18, lineHeight: 1.6 }}>
-        Next.js con Tailwind CSS pronto a essere configurato in uno step successivo.
-        Inizia aggiungendo componenti, pagine e lo stile desiderato.
-      </p>
-    </main>
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-3xl mx-auto">
+        <p className="uppercase tracking-wider text-sm text-gray-500 mb-4">
+          Monorepo Starter
+        </p>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          Portfolio Frontend
+        </h1>
+        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          Next.js con Tailwind CSS configurato e pronto all'uso.
+          Inizia aggiungendo componenti, pagine e lo stile desiderato.
+        </p>
+      </div>
+    </div>
   );
 }
 
