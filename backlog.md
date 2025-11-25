@@ -11,13 +11,13 @@ Descrizione: Configurare server Express base con middleware (cors, express.json)
 Cosa fare: File backend/server.js, backend/config/db.js (connessione MongoDB), middleware, endpoint GET /api/health
 Criterio: Server parte su porta configurata e connessione MongoDB riesce
 Dipendenze: Task 1
-
-## 📝 DA FARE
 Task 3: Schema Database MongoDB (Models)
 Descrizione: Definire i modelli Mongoose per Progetto, Messaggio e IscrittoNewsletter secondo lo schema PRD. Includere validazioni base (required, unique per email).
 Cosa fare: File backend/models/Project.js, backend/models/Message.js, backend/models/Newsletter.js con schema completi
 Criterio: Modelli importabili senza errori, validazioni funzionanti
 Dipendenze: Task 2
+
+## 📝 DA FARE
 Task 4: API Endpoints Progetti (GET)
 Descrizione: Implementare GET /api/projects (lista completa) e GET /api/projects/:id (singolo progetto). Gestire errori 404 e validazione ID.
 Cosa fare: File backend/routes/projects.js, controller backend/controllers/projectController.js con logica GET
