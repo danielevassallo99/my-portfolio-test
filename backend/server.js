@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const Project = require('./models/Project');
+const sampleProjects = require('./utils/sampleProjects');
 
 const localEnv = dotenv.config();
 if (localEnv.error) {
@@ -16,9 +18,22 @@ if (localEnv.error) {
 const PORT = process.env.PORT || 5000;
 const API_URL = process.env.API_URL || 'http://localhost:5000';
 
+async function ensureSampleProjects() {
+  try {
+    const count = await Project.countDocuments();
+    if (count === 0) {
+      await Project.insertMany(sampleProjects);
+      console.log('🌱 Sample projects caricati automaticamente');
+    }
+  } catch (error) {
+    console.warn('Impossibile inserire i progetti di esempio:', error.message);
+  }
+}
+
 async function bootstrap() {
   try {
     await connectDB();
+    await ensureSampleProjects();
     const app = express();
 
     app.use(cors({ origin: API_URL === '*' ? '*' : API_URL }));
