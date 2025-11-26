@@ -16,7 +16,9 @@ if (localEnv.error) {
 }
 
 const PORT = process.env.PORT || 5000;
-const API_URL = process.env.API_URL || 'http://localhost:5000';
+const corsOrigins =
+  process.env.CORS_ORIGINS || 'http://localhost:3000,http://localhost:5000,http://127.0.0.1:3000';
+const allowedOrigins = corsOrigins.split(',').map((origin) => origin.trim());
 
 async function ensureSampleProjects() {
   try {
@@ -36,7 +38,17 @@ async function bootstrap() {
     await ensureSampleProjects();
     const app = express();
 
-    app.use(cors({ origin: API_URL === '*' ? '*' : API_URL }));
+    app.use(
+      cors({
+        origin(origin, callback) {
+          if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+            callback(null, true);
+          } else {
+            callback(new Error(`CORS non permesso per origine: ${origin}`));
+          }
+        }
+      })
+    );
     app.use(express.json());
 
     // Importa le rotte
