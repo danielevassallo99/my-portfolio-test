@@ -1,11 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 const initialForm = {
   nome: '',
   email: '',
-  messaggio: ''
+  messaggio: '',
+  privacy: false
 };
 
 export default function ContactPage() {
@@ -14,8 +16,8 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
   const resetWithDelay = () => {
@@ -40,6 +42,11 @@ export default function ContactPage() {
 
     if (trimmedMessage.length < 10) {
       setStatus({ type: 'error', message: 'Il messaggio deve contenere almeno 10 caratteri.' });
+      return;
+    }
+
+    if (!formData.privacy) {
+      setStatus({ type: 'error', message: 'Devi accettare l’informativa sulla privacy.' });
       return;
     }
 
@@ -141,6 +148,24 @@ export default function ContactPage() {
             className="w-full px-4 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-primary-400 resize-none"
             placeholder="Descrivi brevemente cosa hai in mente..."
           />
+        </div>
+
+        <div className="flex items-start gap-3 text-sm text-gray-600">
+          <input
+            id="privacy"
+            name="privacy"
+            type="checkbox"
+            checked={formData.privacy}
+            onChange={handleChange}
+            className="mt-1 size-5 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+          />
+          <label htmlFor="privacy" className="leading-relaxed">
+            Accetto il trattamento dei miei dati secondo la{' '}
+            <Link href="/privacy" className="text-primary-600 font-semibold hover:text-primary-700">
+              Privacy Policy
+            </Link>
+            .
+          </label>
         </div>
 
         {status.message && (

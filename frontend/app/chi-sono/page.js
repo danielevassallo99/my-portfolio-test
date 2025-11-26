@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 const bioText = `Profilo Professionale di Daniele Vassallo – UX/UI Designer
@@ -122,8 +123,7 @@ const experiences = [
   }
 ];
 
-const profileImage =
-  'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80';
+const profileImage = '/daniele-vassallo.jpg';
 
 export default function AboutPage() {
   const bioParagraphs = bioText.trim().split('\n\n');
@@ -132,12 +132,14 @@ export default function AboutPage() {
     <div className="space-y-16 pb-16">
       <section className="bg-white">
         <div className="container mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="relative h-[420px] sm:h-[520px] lg:h-[640px] rounded-3xl overflow-hidden shadow-xl">
+            <Image
               src={profileImage}
               alt="Daniele Vassallo"
-              className="w-full rounded-3xl object-cover shadow-xl h-full max-h-[640px]"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 45vw, 540px"
+              className="object-cover"
+              priority
             />
             <div className="absolute -bottom-5 -right-5 bg-primary-600 text-white px-5 py-3 rounded-2xl shadow-lg">
               UX/UI Designer

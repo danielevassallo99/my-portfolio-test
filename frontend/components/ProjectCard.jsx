@@ -25,13 +25,13 @@ export default function ProjectCard({ project }) {
           <Image
             src={images[0]}
             alt={title}
-            width={1200}
-            height={768}
+            fill
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="h-64 w-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
+          <div className="h-full w-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
             Immagine non disponibile
           </div>
         )}

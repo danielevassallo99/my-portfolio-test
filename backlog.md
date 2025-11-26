@@ -91,6 +91,11 @@ Descrizione: Verificare responsive design su tutti i breakpoint (mobile/tablet/d
 Cosa fare: Testare tutte le pagine su device diversi, aggiungere next/image per ottimizzazione, lazy load, compressione asset
 Criterio: Sito utilizzabile su mobile senza scroll orizzontale, Lighthouse score >90 performance/accessibility, immagini caricate veloci
 Dipendenze: Task 11, Task 12, Task 13, Task 14, Task 16, Task 17
+Task 20: Popolamento Database Iniziale e Testing Completo
+Descrizione: Inserire 3-5 progetti reali di Daniele nel database con tutti i campi (immagini, contenuto, tags). Testare tutti i flussi utente end-to-end, validare conformità GDPR (privacy policy, consensi).
+Cosa fare: Script seed o inserimento manuale progetti, creare pagina Privacy Policy, testing completo (form, filtri, navigazione), validazione UX
+Criterio: Portfolio mostra progetti reali completi, tutti i form funzionano, link Privacy Policy presente, nessun bug critico
+Dipendenze: Task 7, Task 19
 
 ## 📝 DA FARE
 Task 19: Deploy e Configurazione HTTPS
@@ -98,11 +103,6 @@ Descrizione: Deploy frontend su Vercel e backend su Railway. Configurare variabi
 Cosa fare: Setup account Vercel/Railway, push repo, configurare env vars (DB_URI prod, CORS origins), verificare HTTPS
 Criterio: Sito accessibile pubblicamente via HTTPS, API chiamate da frontend funzionano, no errori CORS
 Dipendenze: Task 2, Task 18
-Task 20: Popolamento Database Iniziale e Testing Completo
-Descrizione: Inserire 3-5 progetti reali di Daniele nel database con tutti i campi (immagini, contenuto, tags). Testare tutti i flussi utente end-to-end, validare conformità GDPR (privacy policy, consensi).
-Cosa fare: Script seed o inserimento manuale progetti, creare pagina Privacy Policy, testing completo (form, filtri, navigazione), validazione UX
-Criterio: Portfolio mostra progetti reali completi, tutti i form funzionano, link Privacy Policy presente, nessun bug critico
-Dipendenze: Task 7, Task 19
 
 ## 🔧 IN PROGRESS
 (nessuno per ora)

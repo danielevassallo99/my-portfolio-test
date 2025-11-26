@@ -41,8 +41,8 @@ const projects = [
     description:
       'Redesign dei flussi di registrazione e discovery per la community Cosmico. Ho effettuato un audit completo dell’informazione, ridotto del 40% i passaggi necessari per creare il profilo e introdotto un linguaggio visivo coerente con la nuova brand identity. Il progetto ha incluso co-design workshop con il team interno, wireframe iterativi, prototipi ad alta fedeltà in Figma e handoff strutturato con librerie di componenti riutilizzabili.',
     images: [
-      'https://images.unsplash.com/photo-1517142089942-ba376ce32a0a?auto=format&fit=crop&w=1600&q=80',
       'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1600&q=80',
+      'https://images.unsplash.com/photo-1517142089942-ba376ce32a0a?auto=format&fit=crop&w=1600&q=80',
       'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80'
     ],
     featured: true
