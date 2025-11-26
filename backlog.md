@@ -51,13 +51,13 @@ Descrizione: Creare footer con link navigazione secondari, social icons (LinkedI
 Cosa fare: Componente frontend/components/Footer.jsx, icone social, link esterni, styling coerente
 Criterio: Footer appare su ogni pagina, link funzionanti, icone social cliccabili
 Dipendenze: Task 8
-
-## 📝 DA FARE
 Task 11: Pagina Home
 Descrizione: Creare homepage con hero section (titolo + slogan Daniele), griglia 3 progetti in evidenza (fetch da API), breve bio/intro e CTA contatto. Box newsletter opzionale.
 Cosa fare: File frontend/pages/index.jsx, fetch GET /api/projects (filtro featured), sezioni hero/progetti/bio/CTA, componenti riutilizzabili
 Criterio: Home carica e mostra 3 progetti con immagini/titoli, hero visibile, layout responsive
 Dipendenze: Task 4, Task 9, Task 10
+
+## 📝 DA FARE
 Task 12: Pagina Chi Sono (About)
 Descrizione: Pagina con bio completa di Daniele, foto professionale, elenco competenze (hard/soft skills), strumenti, esperienze lavorative e CTA contatto finale.
 Cosa fare: File frontend/pages/about.jsx o chi-sono.jsx, sezioni testo + lista skills + esperienze, styling Tailwind
