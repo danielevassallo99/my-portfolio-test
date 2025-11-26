@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 async function fetchProject(id) {
@@ -42,11 +43,13 @@ export default async function ProjectDetailPage({ params }) {
     <div className="space-y-12 pb-16">
       <section className="relative bg-gray-900 text-white">
         {heroImage ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={heroImage}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover opacity-40"
+            fill
+            loading="lazy"
+            className="object-cover opacity-40"
+            sizes="100vw"
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-40" />
@@ -68,8 +71,14 @@ export default async function ProjectDetailPage({ params }) {
           <div className="grid gap-4 md:grid-cols-2">
             {galleryImages.map((img, idx) => (
               <div key={idx} className="rounded-3xl overflow-hidden border border-gray-100 shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={img} alt={`${title} immagine ${idx + 2}`} className="w-full h-full object-cover" />
+                <Image
+                  src={img}
+                  alt={`${title} immagine ${idx + 2}`}
+                  width={1200}
+                  height={768}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>

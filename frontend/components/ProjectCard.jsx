@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 const categoryStyles = {
@@ -19,13 +20,15 @@ export default function ProjectCard({ project }) {
       href={`/portfolio/${_id}`}
       className="group flex flex-col rounded-3xl border border-gray-100 bg-white shadow-sm overflow-hidden hover:shadow-xl transition-shadow duration-300"
     >
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden h-64">
         {images && images.length > 0 ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={images[0]}
             alt={title}
-            className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            width={1200}
+            height={768}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="h-64 w-full bg-gray-100 flex items-center justify-center text-gray-400 text-sm">
