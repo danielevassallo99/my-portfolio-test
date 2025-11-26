@@ -56,8 +56,6 @@ Descrizione: Creare homepage con hero section (titolo + slogan Daniele), griglia
 Cosa fare: File frontend/pages/index.jsx, fetch GET /api/projects (filtro featured), sezioni hero/progetti/bio/CTA, componenti riutilizzabili
 Criterio: Home carica e mostra 3 progetti con immagini/titoli, hero visibile, layout responsive
 Dipendenze: Task 4, Task 9, Task 10
-
-## 📝 DA FARE
 Task 12: Pagina Chi Sono (About)
 Descrizione: Pagina con bio completa di Daniele, foto professionale, elenco competenze (hard/soft skills), strumenti, esperienze lavorative e CTA contatto finale.
 Cosa fare: File frontend/pages/about.jsx o chi-sono.jsx, sezioni testo + lista skills + esperienze, styling Tailwind
@@ -88,6 +86,8 @@ Descrizione: Form iscrizione newsletter (solo campo email + pulsante). POST a /a
 Cosa fare: File frontend/components/NewsletterForm.jsx e/o pagina frontend/pages/newsletter.jsx, submit POST, feedback utente
 Criterio: Form invia email a API, salva in DB, mostra conferma, gestisce duplicati con messaggio
 Dipendenze: Task 6, Task 9, Task 10
+
+## 📝 DA FARE
 Task 18: Ottimizzazioni Responsive e Performance
 Descrizione: Verificare responsive design su tutti i breakpoint (mobile/tablet/desktop), ottimizzare immagini (format WebP, lazy loading), minify CSS/JS, migliorare performance Lighthouse.
 Cosa fare: Testare tutte le pagine su device diversi, aggiungere next/image per ottimizzazione, lazy load, compressione asset
