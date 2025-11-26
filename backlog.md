@@ -86,13 +86,13 @@ Descrizione: Form iscrizione newsletter (solo campo email + pulsante). POST a /a
 Cosa fare: File frontend/components/NewsletterForm.jsx e/o pagina frontend/pages/newsletter.jsx, submit POST, feedback utente
 Criterio: Form invia email a API, salva in DB, mostra conferma, gestisce duplicati con messaggio
 Dipendenze: Task 6, Task 9, Task 10
-
-## 📝 DA FARE
 Task 18: Ottimizzazioni Responsive e Performance
 Descrizione: Verificare responsive design su tutti i breakpoint (mobile/tablet/desktop), ottimizzare immagini (format WebP, lazy loading), minify CSS/JS, migliorare performance Lighthouse.
 Cosa fare: Testare tutte le pagine su device diversi, aggiungere next/image per ottimizzazione, lazy load, compressione asset
 Criterio: Sito utilizzabile su mobile senza scroll orizzontale, Lighthouse score >90 performance/accessibility, immagini caricate veloci
 Dipendenze: Task 11, Task 12, Task 13, Task 14, Task 16, Task 17
+
+## 📝 DA FARE
 Task 19: Deploy e Configurazione HTTPS
 Descrizione: Deploy frontend su Vercel e backend su Railway. Configurare variabili d'ambiente produzione, HTTPS automatico, collegare frontend a backend API, testare funzionamento live.
 Cosa fare: Setup account Vercel/Railway, push repo, configurare env vars (DB_URI prod, CORS origins), verificare HTTPS
